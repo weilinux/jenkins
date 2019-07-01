@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("Build"){
             steps {
-                echo "hello, weilin!"
+                echo "hello, weilinux from github!"
             }
         }
     }
