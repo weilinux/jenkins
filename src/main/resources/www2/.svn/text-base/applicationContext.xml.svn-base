@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	default-autowire="byName" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+	   http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<util:properties id="db" location="classpath:properties/db.properties" />
+
+	<context:component-scan base-package="com.mediahx" />
+	
+	<task:annotation-driven/>
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="#{db['ds.1.driver.class']}" />
+		<property name="url" value="#{db['ds.1.jdbc.url']}" />
+		<property name="username" value="#{db['ds.1.user']}" />
+		<property name="password" value="#{db['ds.1.password']}"/>
+		<property name="initialSize" value="#{db['ds.1.init.size']}" />
+		<property name="maxIdle" value="#{db['ds.1.max.size']}" />
+		<property name="minIdle" value="#{db['ds.1.min.size']}" />
+		<property name="maxActive" value="#{db['ds.1.max.size']}" />
+		<property name="removeAbandoned" value="true" />
+		<property name="minEvictableIdleTimeMillis" value="60000" />
+		<property name="maxWait" value="#{db['ds.1.checkout.timeout']}" />
+		<property name="testWhileIdle" value="true" />
+		<property name="timeBetweenEvictionRunsMillis" value="15000" />
+		<property name="numTestsPerEvictionRun" value="#{db['ds.1.max.size']}" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="false" />
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath:com/mediahx/mapper/mysql/*.xml" />
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.mediahx.dao.mysql" />
+	</bean>
+
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="txManager" />
+	
+</beans>

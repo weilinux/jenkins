@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/hx_project/!svn/ver/29344/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/dao/mysql
+END
+OrderDetailMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/hx_project/!svn/ver/29312/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/dao/mysql/OrderDetailMapper.java
+END
+StadiumDetailMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/hx_project/!svn/ver/29023/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/dao/mysql/StadiumDetailMapper.java
+END
+OrderMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/hx_project/!svn/ver/29344/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/dao/mysql/OrderMapper.java
+END
+StadiumMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/hx_project/!svn/ver/29249/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/dao/mysql/StadiumMapper.java
+END
+UserInfoMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/hx_project/!svn/ver/29083/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/dao/mysql/UserInfoMapper.java
+END
+CitiesMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/hx_project/!svn/ver/28943/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/dao/mysql/CitiesMapper.java
+END
+AreasMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/hx_project/!svn/ver/28943/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/dao/mysql/AreasMapper.java
+END
+AppMessageMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/hx_project/!svn/ver/29190/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/dao/mysql/AppMessageMapper.java
+END
+AdvertMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/hx_project/!svn/ver/28912/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/dao/mysql/AdvertMapper.java
+END
+ProvincesMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/hx_project/!svn/ver/28943/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/dao/mysql/ProvincesMapper.java
+END

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mediahx.dao.mysql.AppMessageMapper">
+  <resultMap id="BaseResultMap" type="com.mediahx.model.AppMessage">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="app_user_id" jdbcType="CHAR" property="appUserId" />
+    <result column="mess_code" jdbcType="VARCHAR" property="messCode" />
+    <result column="mess_title" jdbcType="VARCHAR" property="messTitle" />
+    <result column="mess_content" jdbcType="VARCHAR" property="messContent" />
+    <result column="mess_type" jdbcType="CHAR" property="messType" />
+    <result column="order_detail_id" jdbcType="CHAR" property="orderDetailId" />
+    <result column="order_id" jdbcType="CHAR" property="orderId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List222">
+    id, app_user_id appUserId, mess_code messCode, mess_title messTitle, mess_content messContent, mess_type messType, order_detail_id orderDetailId, 
+    order_id orderId, create_time createTime
+  </sql>
+  <sql id="Base_Column_List">
+    id, app_user_id , mess_code, mess_title, mess_content, mess_type, order_detail_id, 
+    order_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_app_message
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  
+    <select id="queryMsgs" resultType="com.mediahx.model.AppMessage">
+    select 
+    <include refid="Base_Column_List222" />
+    from t_app_message
+    
+    order by create_time desc
+    limit 0,5
+   
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_app_message
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.mediahx.model.AppMessage">
+    insert into t_app_message (id, app_user_id, mess_code, 
+      mess_title, mess_content, mess_type, 
+      order_detail_id, order_id, create_time
+      )
+    values (#{id,jdbcType=CHAR}, #{appUserId,jdbcType=CHAR}, #{messCode,jdbcType=VARCHAR}, 
+      #{messTitle,jdbcType=VARCHAR}, #{messContent,jdbcType=VARCHAR}, #{messType,jdbcType=CHAR}, 
+      #{orderDetailId,jdbcType=CHAR}, #{orderId,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mediahx.model.AppMessage">
+    insert into t_app_message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="appUserId != null">
+        app_user_id,
+      </if>
+      <if test="messCode != null">
+        mess_code,
+      </if>
+      <if test="messTitle != null">
+        mess_title,
+      </if>
+      <if test="messContent != null">
+        mess_content,
+      </if>
+      <if test="messType != null">
+        mess_type,
+      </if>
+      <if test="orderDetailId != null">
+        order_detail_id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="appUserId != null">
+        #{appUserId,jdbcType=CHAR},
+      </if>
+      <if test="messCode != null">
+        #{messCode,jdbcType=VARCHAR},
+      </if>
+      <if test="messTitle != null">
+        #{messTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="messContent != null">
+        #{messContent,jdbcType=VARCHAR},
+      </if>
+      <if test="messType != null">
+        #{messType,jdbcType=CHAR},
+      </if>
+      <if test="orderDetailId != null">
+        #{orderDetailId,jdbcType=CHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mediahx.model.AppMessage">
+    update t_app_message
+    <set>
+      <if test="appUserId != null">
+        app_user_id = #{appUserId,jdbcType=CHAR},
+      </if>
+      <if test="messCode != null">
+        mess_code = #{messCode,jdbcType=VARCHAR},
+      </if>
+      <if test="messTitle != null">
+        mess_title = #{messTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="messContent != null">
+        mess_content = #{messContent,jdbcType=VARCHAR},
+      </if>
+      <if test="messType != null">
+        mess_type = #{messType,jdbcType=CHAR},
+      </if>
+      <if test="orderDetailId != null">
+        order_detail_id = #{orderDetailId,jdbcType=CHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mediahx.model.AppMessage">
+    update t_app_message
+    set app_user_id = #{appUserId,jdbcType=CHAR},
+      mess_code = #{messCode,jdbcType=VARCHAR},
+      mess_title = #{messTitle,jdbcType=VARCHAR},
+      mess_content = #{messContent,jdbcType=VARCHAR},
+      mess_type = #{messType,jdbcType=CHAR},
+      order_detail_id = #{orderDetailId,jdbcType=CHAR},
+      order_id = #{orderId,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

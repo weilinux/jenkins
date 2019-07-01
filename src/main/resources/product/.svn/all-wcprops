@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/hx_project/!svn/ver/29228/hx_control/source/streetball/streetball_app/src/main/resources/product
+END
+applicationContext-redis.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/resources/product/applicationContext-redis.xml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/resources/product/log4j.properties
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/resources/product/applicationContext.xml
+END
+jetty-context.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/resources/product/jetty-context.xml
+END
+applicationContext-mogodb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/resources/product/applicationContext-mogodb.xml
+END

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/hx_project/!svn/ver/29164/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin
+END
+ClientCustomSSL.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/ClientCustomSSL.java
+END
+apiclient_cert.p12
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/hx_project/!svn/ver/29164/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/apiclient_cert.p12
+END
+MD5.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/MD5.java
+END
+UnifiedOrder.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/UnifiedOrder.java
+END
+UnifiedOrderResp.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/UnifiedOrderResp.java
+END
+WeiXinUserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/WeiXinUserInfo.java
+END
+OrderQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/OrderQuery.java
+END
+OrderQueryResp.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/OrderQueryResp.java
+END
+ReFundRequestUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/ReFundRequestUtil.java
+END
+Refund.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/Refund.java
+END
+WxMssVo.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/WxMssVo.java
+END
+TemplateData.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/TemplateData.java
+END
+GenXmlFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/GenXmlFile.java
+END
+WeiXinResp.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/hx_project/!svn/ver/28952/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/weixin/WeiXinResp.java
+END

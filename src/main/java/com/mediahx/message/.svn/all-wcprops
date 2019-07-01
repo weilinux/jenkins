@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/hx_project/!svn/ver/28897/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/message
+END
+Resp.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/message/Resp.java
+END
+SetRespMsg.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/message/SetRespMsg.java
+END
+CommResp.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/message/CommResp.java
+END
+SetCommRespMsg.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/hx_project/!svn/ver/28897/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/message/SetCommRespMsg.java
+END

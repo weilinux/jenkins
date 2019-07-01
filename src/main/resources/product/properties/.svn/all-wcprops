@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/hx_project/!svn/ver/29228/hx_control/source/streetball/streetball_app/src/main/resources/product/properties
+END
+db.properties
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/resources/product/properties/db.properties
+END
+miniprogram.properties
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/hx_project/!svn/ver/29228/hx_control/source/streetball/streetball_app/src/main/resources/product/properties/miniprogram.properties
+END
+redis.properties
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/resources/product/properties/redis.properties
+END
+config.properties
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/resources/product/properties/config.properties
+END
+mongodb.properties
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/resources/product/properties/mongodb.properties
+END

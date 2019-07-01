@@ -1,0 +1,99 @@
+8
+
+dir
+29418
+https://svn.hx.com:8443/svn/hx_project/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/bean
+https://svn.hx.com:8443/svn/hx_project
+
+
+
+2019-05-29T02:33:01.990800Z
+29406
+guomf
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+30e7cd8e-d64d-cc45-81ab-772af5db07c1
+
+OrderBean.java
+file
+
+
+
+
+2019-05-21T10:53:08.000000Z
+d38d9fc2c1706d0c5e6241e488e96f44
+2019-05-21T08:23:06.501800Z
+29213
+guomf
+has-props
+
+OrderDetailBean.java
+file
+
+
+
+
+2019-05-29T02:34:34.000000Z
+f5210658130d302af7f96f2282063a63
+2019-05-29T02:33:01.990800Z
+29406
+guomf
+has-props
+
+PageInfo.java
+file
+
+
+
+
+2019-04-28T08:23:06.000000Z
+bdf5360366fafdd04d19c09510f51aab
+2019-04-26T06:47:59.357000Z
+28851
+feihang
+has-props
+
+RefundBean.java
+file
+
+
+
+
+2019-05-24T01:55:02.000000Z
+81302e9838cfb6c60bce473e845c1428
+2019-05-24T01:48:55.607800Z
+29312
+guomf
+has-props
+
+RequestVo.java
+file
+
+
+
+
+2019-04-28T08:23:06.000000Z
+bf436ecc24418f6525a86d5433663cf3
+2019-04-26T06:47:59.357000Z
+28851
+feihang
+has-props
+
+stadium
+dir
+
+user
+dir
+

@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mediahx.dao.mysql.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.mediahx.model.Order">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="order_class" jdbcType="VARCHAR" property="orderClass" />
+    <result column="stadium_id" jdbcType="CHAR" property="stadiumId" />
+    <result column="stadium_detail_id" jdbcType="CHAR" property="stadiumDetailId" />
+    <result column="user_id" jdbcType="CHAR" property="userId" />
+    <result column="order_amt" jdbcType="DOUBLE" property="orderAmt" />
+    <result column="site_amt" jdbcType="DOUBLE" property="siteAmt" />
+    <result column="prepay_amt" jdbcType="DOUBLE" property="prepayAmt" />
+     <result column="minimum_amt" jdbcType="DOUBLE" property="minimumAmt" />
+    <result column="actual_amt" jdbcType="DOUBLE" property="actualAmt" />
+    <result column="member_size" jdbcType="INTEGER" property="memberSize" />
+    <result column="actual_size" jdbcType="INTEGER" property="actualSize" />
+    <result column="lock_size" jdbcType="INTEGER" property="lockSize" />
+     <result column="team_code" jdbcType="CHAR" property="teamCode" />
+    <result column="free_type" jdbcType="CHAR" property="freeType" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="time" jdbcType="CHAR" property="time" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="is_join" jdbcType="VARCHAR" property="isJoin" />
+    <result column="lock_num" jdbcType="INTEGER" property="lockNum" />
+    <result column="order_time" jdbcType="TIMESTAMP" property="orderTime" />
+    <result column="settlement_time" jdbcType="TIMESTAMP" property="settlementTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, order_no, order_class, stadium_id, stadium_detail_id, user_id, order_amt, site_amt, 
+    prepay_amt, minimum_amt,actual_amt, member_size, actual_size, lock_size,team_code, free_type, status,time, remark, is_join,lock_num,
+    order_time, settlement_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_order
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_order
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.mediahx.model.Order">
+    insert into t_order (id, order_no, order_class, 
+      stadium_id, stadium_detail_id, user_id, 
+      order_amt, site_amt, prepay_amt, minimum_amt,
+      actual_amt, member_size, actual_size, 
+      lock_size,team_code, free_type, status, time,
+      remark,is_join,lock_num, order_time, settlement_time, 
+      update_time)
+    values (#{id,jdbcType=CHAR}, #{orderNo,jdbcType=VARCHAR}, #{orderClass,jdbcType=VARCHAR}, 
+      #{stadiumId,jdbcType=CHAR}, #{stadiumDetailId,jdbcType=CHAR}, #{userId,jdbcType=CHAR}, 
+      #{orderAmt,jdbcType=DOUBLE}, #{siteAmt,jdbcType=DOUBLE}, #{prepayAmt,jdbcType=DOUBLE}, #{minimumAmt,jdbcType=DOUBLE},
+      #{actualAmt,jdbcType=DOUBLE},  #{memberSize,jdbcType=INTEGER}, #{actualSize,jdbcType=INTEGER}, 
+      #{lockSize,jdbcType=INTEGER},#{teamCode,jdbcType=CHAR}, #{freeType,jdbcType=CHAR}, #{status,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR},
+      #{remark,jdbcType=VARCHAR}, #{isJoin,jdbcType=VARCHAR},#{lockNum,jdbcType=INTEGER}, #{orderTime,jdbcType=TIMESTAMP}, #{settlementTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mediahx.model.Order">
+    insert into t_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderNo != null">
+        order_no,
+      </if>
+      <if test="orderClass != null">
+        order_class,
+      </if>
+      <if test="stadiumId != null">
+        stadium_id,
+      </if>
+      <if test="stadiumDetailId != null">
+        stadium_detail_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="orderAmt != null">
+        order_amt,
+      </if>
+      <if test="siteAmt != null">
+        site_amt,
+      </if>
+      <if test="prepayAmt != null">
+        prepay_amt,
+      </if>
+      
+       <if test="minimumAmt != null">
+        minimum_amt,
+      </if>
+      <if test="actualAmt != null">
+        actual_amt,
+      </if>
+      <if test="memberSize != null">
+        member_size,
+      </if>
+      <if test="actualSize != null">
+        actual_size,
+      </if>
+      <if test="lockSize != null">
+        lock_size,
+      </if>
+      
+      <if test="teamCode != null">
+        team_code,
+      </if>
+      <if test="freeType != null">
+        free_type,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+         <if test="time != null">
+        time,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+        <if test="isJoin != null">
+        is_join,
+      </if>
+       <if test="lockNum != null">
+        lock_num,
+      </if>
+      <if test="orderTime != null">
+        order_time,
+      </if>
+      <if test="settlementTime != null">
+        settlement_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderClass != null">
+        #{orderClass,jdbcType=VARCHAR},
+      </if>
+      <if test="stadiumId != null">
+        #{stadiumId,jdbcType=CHAR},
+      </if>
+      <if test="stadiumDetailId != null">
+        #{stadiumDetailId,jdbcType=CHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="orderAmt != null">
+        #{orderAmt,jdbcType=DOUBLE},
+      </if>
+      <if test="siteAmt != null">
+        #{siteAmt,jdbcType=DOUBLE},
+      </if>
+      <if test="prepayAmt != null">
+        #{prepayAmt,jdbcType=DOUBLE},
+      </if>
+      
+       <if test="minimumAmt != null">
+        #{minimumAmt,jdbcType=DOUBLE},
+      </if>
+      <if test="actualAmt != null">
+        #{actualAmt,jdbcType=DOUBLE},
+      </if>
+      <if test="memberSize != null">
+        #{memberSize,jdbcType=INTEGER},
+      </if>
+      <if test="actualSize != null">
+        #{actualSize,jdbcType=INTEGER},
+      </if>
+      <if test="lockSize != null">
+        #{lockSize,jdbcType=INTEGER},
+      </if>
+      <if test="teamCode != null">
+        #{teamCode,jdbcType=INTEGER},
+      </if>
+      <if test="freeType != null">
+        #{freeType,jdbcType=CHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+      
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isJoin != null">
+        #{isJoin,jdbcType=VARCHAR},
+      </if>
+        <if test="lockNum != null">
+        #{lockNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderTime != null">
+        #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="settlementTime != null">
+        #{settlementTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mediahx.model.Order">
+    update t_order
+    <set>
+      <if test="orderNo != null">
+        order_no = #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderClass != null">
+        order_class = #{orderClass,jdbcType=VARCHAR},
+      </if>
+      <if test="stadiumId != null">
+        stadium_id = #{stadiumId,jdbcType=CHAR},
+      </if>
+      <if test="stadiumDetailId != null">
+        stadium_detail_id = #{stadiumDetailId,jdbcType=CHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=CHAR},
+      </if>
+      <if test="orderAmt != null">
+        order_amt = #{orderAmt,jdbcType=DOUBLE},
+      </if>
+      <if test="siteAmt != null">
+        site_amt = #{siteAmt,jdbcType=DOUBLE},
+      </if>
+      <if test="prepayAmt != null">
+        prepay_amt = #{prepayAmt,jdbcType=DOUBLE},
+      </if>
+      
+      <if test="minimumAmt != null">
+        minimum_amt = #{minimumAmt,jdbcType=DOUBLE},
+      </if>
+      <if test="actualAmt != null">
+        actual_amt = #{actualAmt,jdbcType=DOUBLE},
+      </if>
+      <if test="memberSize != null">
+        member_size = #{memberSize,jdbcType=INTEGER},
+      </if>
+      <if test="actualSize != null">
+        actual_size = #{actualSize,jdbcType=INTEGER},
+      </if>
+      <if test="lockSize != null">
+        lock_size = #{lockSize,jdbcType=INTEGER},
+      </if>
+      <if test="teamCode != null">
+        team_code = #{teamCode,jdbcType=INTEGER},
+      </if>
+      <if test="freeType != null">
+        free_type = #{freeType,jdbcType=CHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+       <if test="time != null">
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+        remark = #{remark,jdbcType=VARCHAR},
+        <if test="isJoin != null">
+        is_join = #{isJoin,jdbcType=VARCHAR},
+      </if>
+      
+         <if test="lockNum != null">
+        lock_num = #{lockNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderTime != null">
+        order_time = #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="settlementTime != null">
+        settlement_time = #{settlementTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mediahx.model.Order">
+    update t_order
+    set order_no = #{orderNo,jdbcType=VARCHAR},
+      order_class = #{orderClass,jdbcType=VARCHAR},
+      stadium_id = #{stadiumId,jdbcType=CHAR},
+      stadium_detail_id = #{stadiumDetailId,jdbcType=CHAR},
+      user_id = #{userId,jdbcType=CHAR},
+      order_amt = #{orderAmt,jdbcType=DOUBLE},
+      site_amt = #{siteAmt,jdbcType=DOUBLE},
+      prepay_amt = #{prepayAmt,jdbcType=DOUBLE},
+       minimum_amt = #{minimumAmt,jdbcType=DOUBLE},
+      actual_amt = #{actualAmt,jdbcType=DOUBLE},
+      member_size = #{memberSize,jdbcType=INTEGER},
+      actual_size = #{actualSize,jdbcType=INTEGER},
+      lock_size = #{lockSize,jdbcType=INTEGER},
+      team_code = #{teamCode,jdbcType=INTEGER},
+      free_type = #{freeType,jdbcType=CHAR},
+      status = #{status,jdbcType=VARCHAR},
+   	  time = #{time,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      is_join = #{isJoin,jdbcType=VARCHAR},
+      lock_num = #{lockNum,jdbcType=INTEGER},
+      order_time = #{orderTime,jdbcType=TIMESTAMP},
+      settlement_time = #{settlementTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  
+  <select id="findSucceedOrder" parameterType="java.lang.String" resultType="java.lang.String">
+    select 
+    	ui.photo
+    from t_order o 
+		LEFT JOIN t_user_info ui ON o.user_id = ui.id 
+    where o.stadium_id = #{stadiumId,jdbcType=CHAR}
+    	and o.`status` = 'succeed'
+    order by o.order_time
+  </select>
+
+  <select id="queryPhotos" parameterType="map" resultType="com.mediahx.model.UserInfo">
+	select
+	ui.*,o.order_time orderTime
+	from t_order o
+	LEFT JOIN t_user_info ui ON o.user_id = ui.id
+	where
+	o.id = #{orderId,jdbcType=CHAR}
+	
+	UNION ALL
+	
+	select
+	uii.*,od.order_time orderTime
+	from t_order_detail od
+	LEFT JOIN t_user_info uii ON od.user_id = uii.id
+	where 1=1
+	and od.status is not null
+	 and od.order_id = #{orderId,jdbcType=CHAR}
+	 
+	 order by orderTime ASC
+  </select>
+  
+    <select id="queryPhotoList" parameterType="map" resultType="com.mediahx.model.UserInfo">
+	select
+	ui.*,o.order_time orderTime
+	from t_order o
+	LEFT JOIN t_user_info ui ON o.user_id = ui.id
+	where
+	o.id = #{orderId,jdbcType=CHAR}
+	
+	UNION ALL
+	
+	select
+	uii.*,od.order_time orderTime
+	from t_order_detail od
+	LEFT JOIN t_user_info uii ON od.user_id = uii.id
+	where
+	od.status is not null
+	and
+	od.order_id = #{orderId,jdbcType=CHAR}
+	
+	order by orderTime ASC
+	limit 0,6
+  </select>
+	<select id="queryMyOrders" parameterType="map" resultType="com.mediahx.bean.OrderBean">
+		select
+		ui.photo photo,
+		(case o.order_class
+		when 'match' then '拼场'
+		when 'group' then '包场'
+		end
+		) AS orderClass,
+		o.member_size memberSize,
+		o.actual_size actualSize,
+		o.lock_size lockSize,
+		o.site_amt price,
+		o.`status`,
+		o.id,
+		s.`name`,
+		sd.`day`,
+		sd.time,
+		o.order_time orderTime
+		from t_order o
+		LEFT JOIN t_stadium_detail sd ON o.stadium_detail_id = sd.id
+		LEFT JOIN
+		t_stadium s ON sd.stadium_id = s.id
+		LEFT JOIN t_user_info ui ON o.user_id = ui.id
+		where
+		o.user_id = #{userId,jdbcType=CHAR}
+		and o.status is not null
+		 <if test="status != null and status !=''">
+			and o.status = #{status,jdbcType=VARCHAR}
+		 </if>
+	UNION ALL 
+	
+		SELECT
+		ui.photo photo,
+		(case o.order_class
+		when 'match' then '拼场'
+		when 'group' then '包场'
+		end
+		) AS orderClass,
+		o.member_size memberSize,
+		o.actual_size actualSize,
+		o.lock_size lockSize,
+		o.prepay_amt price,
+		o.`status`,
+		o.id,
+		s.`name`,
+		sd.`day`,
+		sd.time,
+		od.order_time orderTime
+		from t_order_detail od
+		LEFT JOIN t_order o ON od.order_id = o.id
+		LEFT JOIN t_stadium_detail sd ON o.stadium_detail_id = sd.id
+		LEFT JOIN t_stadium s ON sd.stadium_id = s.id
+		LEFT JOIN t_user_info ui ON o.user_id = ui.id
+		where od.user_id = #{userId,jdbcType=CHAR}
+		and od.status is not null
+		 <if test="status != null and status !=''">
+		  and od.status = #{status,jdbcType=VARCHAR}
+		 </if>
+		 ORDER BY orderTime DESC
+		 <if test="currentPageNum !=null and pageSize !=null">
+			limit ${currentPageNum} , ${pageSize}
+		 </if>
+	</select>
+
+	<select id="queryMachingOrderIds"  resultType="com.mediahx.bean.RefundBean">
+  		select
+		o.id  orderId ,od.id orderDetailId,o.site_amt siteAmt,o.prepay_amt prepayAmt,
+		o.actual_amt actualAmt,o.actual_size actualSize,o.order_amt orderAmt,od.status detailStatus
+		from
+		t_order o
+		left join t_order_detail od on o.id = od.order_id
+		where 1=1
+		<!-- and o.order_time &lt; NOW() -->
+		<if test="stadiumDetailId != null and stadiumDetailId !=''">
+		and o.stadium_detail_id =  #{stadiumDetailId,jdbcType=CHAR}
+		</if>
+		<if test="orderId != null and orderId !=''">
+		and o.id =  #{orderId,jdbcType=CHAR}
+		</if>
+		and o.`status` = 'matching'
+	</select>
+	
+	<update id="updateOrdersStatus" parameterType="java.util.Map">
+	update t_order 	set
+	status = "failed",
+	update_time = NOW(),
+	settlement_time = NOW()
+	where
+	id in
+	   <foreach item="value" index="key" collection="reqParam.entrySet()" open="(" separator="," close=")">
+			 #{key}
+		</foreach> 
+      
+  	</update>
+  	
+	<select id="queryMyOrdersCount" parameterType="map" resultType="java.lang.Integer">
+		select count(1) from
+		(select
+		ui.photo photo,
+		(case o.order_class
+		when 'match' then '拼场'
+		when 'group' then '包场'
+		end
+		) AS orderClass,
+		o.member_size memberSize,
+		o.actual_size actualSize,
+		o.lock_size lockSize,
+		(case o.`status`
+		when 'succeed' then '已成功'
+		when 'matching' then '拼场中'
+		when 'failed' then '已失败'
+		when 'finished' then '已完成'
+		end
+		) AS `status`,
+		s.`name`,
+		sd.`day`,
+		sd.time,
+		o.order_time orderTime
+		from t_order o
+		LEFT JOIN t_stadium_detail sd ON o.stadium_detail_id = sd.id
+		LEFT JOIN
+		t_stadium s ON sd.stadium_id = s.id
+		LEFT JOIN t_user_info ui ON o.user_id = ui.id
+		where
+		o.user_id = #{userId,jdbcType=CHAR}
+		 <if test="status != null and status !=''">
+			and o.status = #{status,jdbcType=VARCHAR}
+		 </if>
+	UNION ALL 
+	
+		SELECT
+		ui.photo photo,
+		(case o.order_class
+		when 'match' then '拼场'
+		when 'group' then '包场'
+		end
+		) AS orderClass,
+		o.member_size memberSize,
+		o.actual_size actualSize,
+		o.lock_size lockSize,
+		(case o.`status`
+		when 'succeed' then '已成功'
+		when 'matching' then '拼场中'
+		when 'failed' then '已失败'
+		when 'finished' then '已完成'
+		end
+		) AS `status`,
+		s.`name`,
+		sd.`day`,
+		sd.time,
+		od.order_time orderTime
+		from t_order_detail od
+		LEFT JOIN t_order o ON od.order_id = o.id
+		LEFT JOIN t_stadium_detail sd ON o.stadium_detail_id = sd.id
+		LEFT JOIN t_stadium s ON sd.stadium_id = s.id
+		LEFT JOIN t_user_info ui ON o.user_id = ui.id
+		where od.user_id = #{userId,jdbcType=CHAR}
+		 <if test="status != null and status !=''">
+		 and od.status = #{status,jdbcType=VARCHAR}
+		 </if>
+		 )aa
+	</select>
+	<select id="selectBallTeam" parameterType="java.lang.String" resultType="java.util.Map">
+		select
+			o.id, o.team_code, o.user_id, o.prepay_amt, o.order_class, o.lock_size, o.member_size,
+			o.actual_size,o.status,o.lock_num,sd.`status` AS stadiumDetailStatus,o.site_amt,
+			ui.photo,s.longitude,s.latitude,
+			s.`name`,s.address, sd.`day` ,sd.time
+		from t_order o
+			LEFT JOIN t_stadium s ON o.stadium_id = s.id
+			LEFT JOIN t_stadium_detail sd ON o.stadium_detail_id = sd.id
+			LEFT JOIN t_user_info ui ON o.user_id = ui.id
+		where
+			<!--o.`status` != 'finished' 
+			 and o.`status` != 'failed'  
+			and sd.`status` = 'Y' and  -->
+			s.`status` = 'Y' and
+			o.id = #{orderId,jdbcType=CHAR}
+	</select>
+  <select id="queryMyOrderDetail" parameterType="map" resultType="com.mediahx.bean.OrderDetailBean">
+	select
+	(case o.order_class
+	when 'match' then '拼场'
+	when 'group' then '包场'
+	end
+	) AS orderClass,
+	o.member_size memberSize,
+	o.actual_size actualSize,
+	o.lock_size lockSize,
+	o.order_no orderNo,
+	o.team_code teamCode,
+	o.`status`,
+	o.id,
+	o.prepay_amt prepayAmt,
+	o.order_amt orderAmt,
+	o.site_amt siteAmt,
+	o.user_id userId,
+	o.lock_num lockNum,
+	o.actual_amt actualAmt,
+	s.`name`,
+	s.longitude,
+	s.latitude,
+	s.address,
+	sd.`day`,
+	sd.time,
+	o.order_time orderTime
+	from t_order o
+	LEFT JOIN t_stadium_detail sd ON o.stadium_detail_id = sd.id
+	LEFT JOIN t_stadium s ON sd.stadium_id = s.id
+	where
+	o.id = #{orderId,jdbcType=CHAR}
+	</select>
+</mapper>

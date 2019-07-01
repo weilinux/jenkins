@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mediahx.dao.mysql.OrderDetailMapper">
+  <resultMap id="BaseResultMap" type="com.mediahx.model.OrderDetail">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="order_id" jdbcType="CHAR" property="orderId" />
+    <result column="user_id" jdbcType="CHAR" property="userId" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="order_time" jdbcType="TIMESTAMP" property="orderTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, order_id, user_id, status,remark, order_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_order_detail
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  
+   <select id="queryOrderDetail" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_order_detail
+    where
+     <if test="orderId != null and orderId !=''">
+     order_id = #{orderId,jdbcType=CHAR}
+     </if>
+       <if test="userId != null and userId !=''">
+       and  user_id = #{userId,jdbcType=CHAR} 
+     </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_order_detail
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.mediahx.model.OrderDetail">
+    insert into t_order_detail (id, order_id, user_id,
+      status,remark, order_time)
+    values (#{id,jdbcType=CHAR}, #{orderId,jdbcType=CHAR}, #{userId,jdbcType=CHAR},
+      #{status,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{orderTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mediahx.model.OrderDetail">
+    insert into t_order_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+     <if test="remark != null">
+        remark,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="orderTime != null">
+        order_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=CHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=CHAR},
+      </if>
+     
+     <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTime != null">
+        #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mediahx.model.OrderDetail">
+    update t_order_detail
+    <set>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=CHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=CHAR},
+      </if>
+     
+     <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTime != null">
+        order_time = #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateStatusByOrderId" parameterType="java.lang.String">
+    update t_order_detail
+    set status = 'succeed'
+    where 
+    order_id = #{orderId,jdbcType=CHAR}
+    and status is not null
+    and status != ""
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mediahx.model.OrderDetail">
+    update t_order_detail
+    set order_id = #{orderId,jdbcType=CHAR},
+      user_id = #{userId,jdbcType=CHAR},
+     
+      status = #{status,jdbcType=VARCHAR},
+      order_time = #{orderTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  
+  
+  <select id="selectPhotoByOrderId" parameterType="java.lang.String" resultType="com.mediahx.model.UserInfo">
+    select 
+		ui.id, ui.photo
+	from t_order_detail od
+		RIGHT JOIN t_user_info ui ON od.user_id = ui.id
+	where 
+		od.order_id = #{orderId,jdbcType=CHAR}
+		and od.status is not null AND od.`status` !=''
+		ORDER BY od.order_time
+  </select>
+  
+  <update id="updateOrdersDetailStatus" parameterType="java.util.Map">
+	update t_order_detail 	set
+	status = 'failed'
+	where
+	order_id in
+	   <foreach item="value" index="key" collection="reqParam.entrySet()" open="(" separator="," close=")">
+			 #{key}
+		</foreach> 
+     and status is not null
+     and status != ""
+  	</update>
+</mapper>

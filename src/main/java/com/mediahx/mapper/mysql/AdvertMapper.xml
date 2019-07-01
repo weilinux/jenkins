@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mediahx.dao.mysql.AdvertMapper">
+  <resultMap id="BaseResultMap" type="com.mediahx.model.Advert">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="picpath" jdbcType="VARCHAR" property="picpath" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="effective_time" jdbcType="TIMESTAMP" property="effectiveTime" />
+    <result column="advert_column_id" jdbcType="VARCHAR" property="advertColumnId" />
+    <result column="publish_province_id" jdbcType="CHAR" property="publishProvinceId" />
+    <result column="publish_city_id" jdbcType="CHAR" property="publishCityId" />
+    <result column="publish_area_id" jdbcType="CHAR" property="publishAreaId" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="refer_url" jdbcType="VARCHAR" property="referUrl" />
+    <result column="img_path" jdbcType="LONGVARCHAR" property="imgPath" />
+    <result column="owner_id" jdbcType="VARCHAR" property="ownerId" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  
+  <sql id="Base_Column_List">
+    id, name, picpath, publish_time, effective_time, advert_column_id, publish_province_id, 
+    publish_city_id, publish_area_id, type, refer_url, img_path, owner_id, status, create_time, 
+    update_time
+  </sql>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_advert
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_advert
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.mediahx.model.Advert">
+    insert into t_advert (id, name, picpath, 
+      publish_time, effective_time, advert_column_id, 
+      publish_province_id, publish_city_id, publish_area_id, 
+      type, refer_url, owner_id, 
+      status, create_time, update_time, 
+      img_path)
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{picpath,jdbcType=VARCHAR}, 
+      #{publishTime,jdbcType=TIMESTAMP}, #{effectiveTime,jdbcType=TIMESTAMP}, #{advertColumnId,jdbcType=VARCHAR}, 
+      #{publishProvinceId,jdbcType=CHAR}, #{publishCityId,jdbcType=CHAR}, #{publishAreaId,jdbcType=CHAR}, 
+      #{type,jdbcType=VARCHAR}, #{referUrl,jdbcType=VARCHAR}, #{ownerId,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{imgPath,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mediahx.model.Advert">
+    insert into t_advert
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="picpath != null">
+        picpath,
+      </if>
+      <if test="publishTime != null">
+        publish_time,
+      </if>
+      <if test="effectiveTime != null">
+        effective_time,
+      </if>
+      <if test="advertColumnId != null">
+        advert_column_id,
+      </if>
+      <if test="publishProvinceId != null">
+        publish_province_id,
+      </if>
+      <if test="publishCityId != null">
+        publish_city_id,
+      </if>
+      <if test="publishAreaId != null">
+        publish_area_id,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="referUrl != null">
+        refer_url,
+      </if>
+      <if test="ownerId != null">
+        owner_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="imgPath != null">
+        img_path,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="picpath != null">
+        #{picpath,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null">
+        #{publishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="effectiveTime != null">
+        #{effectiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="advertColumnId != null">
+        #{advertColumnId,jdbcType=VARCHAR},
+      </if>
+      <if test="publishProvinceId != null">
+        #{publishProvinceId,jdbcType=CHAR},
+      </if>
+      <if test="publishCityId != null">
+        #{publishCityId,jdbcType=CHAR},
+      </if>
+      <if test="publishAreaId != null">
+        #{publishAreaId,jdbcType=CHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="referUrl != null">
+        #{referUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerId != null">
+        #{ownerId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imgPath != null">
+        #{imgPath,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mediahx.model.Advert">
+    update t_advert
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="picpath != null">
+        picpath = #{picpath,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null">
+        publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="effectiveTime != null">
+        effective_time = #{effectiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="advertColumnId != null">
+        advert_column_id = #{advertColumnId,jdbcType=VARCHAR},
+      </if>
+      <if test="publishProvinceId != null">
+        publish_province_id = #{publishProvinceId,jdbcType=CHAR},
+      </if>
+      <if test="publishCityId != null">
+        publish_city_id = #{publishCityId,jdbcType=CHAR},
+      </if>
+      <if test="publishAreaId != null">
+        publish_area_id = #{publishAreaId,jdbcType=CHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="referUrl != null">
+        refer_url = #{referUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerId != null">
+        owner_id = #{ownerId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imgPath != null">
+        img_path = #{imgPath,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.mediahx.model.Advert">
+    update t_advert
+    set name = #{name,jdbcType=VARCHAR},
+      picpath = #{picpath,jdbcType=VARCHAR},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      effective_time = #{effectiveTime,jdbcType=TIMESTAMP},
+      advert_column_id = #{advertColumnId,jdbcType=VARCHAR},
+      publish_province_id = #{publishProvinceId,jdbcType=CHAR},
+      publish_city_id = #{publishCityId,jdbcType=CHAR},
+      publish_area_id = #{publishAreaId,jdbcType=CHAR},
+      type = #{type,jdbcType=VARCHAR},
+      refer_url = #{referUrl,jdbcType=VARCHAR},
+      owner_id = #{ownerId,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      img_path = #{imgPath,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mediahx.model.Advert">
+    update t_advert
+    set name = #{name,jdbcType=VARCHAR},
+      picpath = #{picpath,jdbcType=VARCHAR},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      effective_time = #{effectiveTime,jdbcType=TIMESTAMP},
+      advert_column_id = #{advertColumnId,jdbcType=VARCHAR},
+      publish_province_id = #{publishProvinceId,jdbcType=CHAR},
+      publish_city_id = #{publishCityId,jdbcType=CHAR},
+      publish_area_id = #{publishAreaId,jdbcType=CHAR},
+      type = #{type,jdbcType=VARCHAR},
+      refer_url = #{referUrl,jdbcType=VARCHAR},
+      owner_id = #{ownerId,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  
+  <select id="selectAllAdvert" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    	<include refid="Base_Column_List" />
+    from t_advert
+    where status = 'Y'
+  </select>
+  
+</mapper>

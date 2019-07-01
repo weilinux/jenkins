@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/exception
+END
+HXException.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/exception/HXException.java
+END
+HXExceptionHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/exception/HXExceptionHandler.java
+END
+HXErrorCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/exception/HXErrorCode.java
+END
+PlatformErrorCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/exception/PlatformErrorCode.java
+END

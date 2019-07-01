@@ -1,0 +1,50 @@
+8
+
+dir
+29418
+https://svn.hx.com:8443/svn/hx_project/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/bo
+https://svn.hx.com:8443/svn/hx_project
+
+
+
+2019-05-29T06:02:51.574800Z
+29411
+guomf
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+30e7cd8e-d64d-cc45-81ab-772af5db07c1
+
+AbstractBaseBO.java
+file
+
+
+
+
+2019-05-09T12:59:10.000000Z
+3ab417942ae4fdb33c2667389b197128
+2019-05-07T10:36:06.797803Z
+29023
+guomf
+has-props
+
+pay
+dir
+
+stadium
+dir
+
+user
+dir
+

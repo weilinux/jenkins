@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mediahx.dao.mysql.CitiesMapper">
+  <resultMap id="BaseResultMap" type="com.mediahx.model.Cities">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="province_id" jdbcType="VARCHAR" property="provinceId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, city_id, city, province_id
+  </sql>
+  
+  <select id="findAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_cities
+  </select>
+  
+   <select id="findByCityId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_cities
+    where city_id = #{cityId,jdbcType=VARCHAR}
+  </select>
+  
+   <select id="findByProvinceId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_cities
+    where province_id = #{provinceId,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_cities
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_cities
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mediahx.model.Cities">
+    insert into t_cities (id, city_id, city, 
+      province_id)
+    values (#{id,jdbcType=INTEGER}, #{cityId,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{provinceId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mediahx.model.Cities">
+    insert into t_cities
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="provinceId != null">
+        province_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        #{provinceId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mediahx.model.Cities">
+    update t_cities
+    <set>
+      <if test="cityId != null">
+        city_id = #{cityId,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null">
+        province_id = #{provinceId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mediahx.model.Cities">
+    update t_cities
+    set city_id = #{cityId,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/util/gif
+END
+GifDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/util/gif/GifDecoder.java
+END
+AnimatedGifEncoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/util/gif/AnimatedGifEncoder.java
+END
+Scalr.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/util/gif/Scalr.java
+END
+NeuQuant.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/util/gif/NeuQuant.java
+END
+LZWEncoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/util/gif/LZWEncoder.java
+END

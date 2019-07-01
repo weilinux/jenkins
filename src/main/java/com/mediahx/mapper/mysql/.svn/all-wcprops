@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/hx_project/!svn/ver/29406/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/mapper/mysql
+END
+AreasMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/hx_project/!svn/ver/28943/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/mapper/mysql/AreasMapper.xml
+END
+AppMessageMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/hx_project/!svn/ver/29190/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/mapper/mysql/AppMessageMapper.xml
+END
+UserInfoMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/hx_project/!svn/ver/29178/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/mapper/mysql/UserInfoMapper.xml
+END
+CitiesMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/hx_project/!svn/ver/28943/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/mapper/mysql/CitiesMapper.xml
+END
+StadiumMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/hx_project/!svn/ver/29249/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/mapper/mysql/StadiumMapper.xml
+END
+StadiumDetailMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/hx_project/!svn/ver/29391/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/mapper/mysql/StadiumDetailMapper.xml
+END
+OrderMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/hx_project/!svn/ver/29406/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/mapper/mysql/OrderMapper.xml
+END
+OrderDetailMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/hx_project/!svn/ver/29357/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/mapper/mysql/OrderDetailMapper.xml
+END
+ProvincesMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/hx_project/!svn/ver/28943/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/mapper/mysql/ProvincesMapper.xml
+END
+AdvertMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/hx_project/!svn/ver/28950/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/mapper/mysql/AdvertMapper.xml
+END

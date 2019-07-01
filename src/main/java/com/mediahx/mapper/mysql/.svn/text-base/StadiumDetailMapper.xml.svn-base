@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mediahx.dao.mysql.StadiumDetailMapper">
+  <resultMap id="BaseResultMap" type="com.mediahx.model.StadiumDetail">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="stadium_id" jdbcType="CHAR" property="stadiumId" />
+    <result column="month" jdbcType="CHAR" property="month" />
+    <result column="day" jdbcType="DATE" property="day" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="quantity" jdbcType="INTEGER" property="quantity" />
+    <result column="sold_quantity" jdbcType="INTEGER" property="soldQuantity" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="is_new" jdbcType="CHAR" property="isNew" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  
+  <sql id="Base_Column_List">
+    id, stadium_id, month, day, time, quantity, sold_quantity, price, is_new, status, 
+    create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_stadium_detail
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_stadium_detail
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.mediahx.model.StadiumDetail">
+    insert into t_stadium_detail (id, stadium_id, month, 
+      day, time, quantity, sold_quantity, 
+      price, is_new, status, create_time, 
+      update_time)
+    values (#{id,jdbcType=CHAR}, #{stadiumId,jdbcType=CHAR}, #{month,jdbcType=CHAR}, 
+      #{day,jdbcType=DATE}, #{time,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, #{soldQuantity,jdbcType=INTEGER}, 
+      #{price,jdbcType=DOUBLE}, #{isNew,jdbcType=CHAR}, #{status,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mediahx.model.StadiumDetail">
+    insert into t_stadium_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="stadiumId != null">
+        stadium_id,
+      </if>
+      <if test="month != null">
+        month,
+      </if>
+      <if test="day != null">
+        day,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="quantity != null">
+        quantity,
+      </if>
+      <if test="soldQuantity != null">
+        sold_quantity,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="isNew != null">
+        is_new,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="stadiumId != null">
+        #{stadiumId,jdbcType=CHAR},
+      </if>
+      <if test="month != null">
+        #{month,jdbcType=CHAR},
+      </if>
+      <if test="day != null">
+        #{day,jdbcType=DATE},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null">
+        #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="soldQuantity != null">
+        #{soldQuantity,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="isNew != null">
+        #{isNew,jdbcType=CHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mediahx.model.StadiumDetail">
+    update t_stadium_detail
+    <set>
+      <if test="stadiumId != null">
+        stadium_id = #{stadiumId,jdbcType=CHAR},
+      </if>
+      <if test="month != null">
+        month = #{month,jdbcType=CHAR},
+      </if>
+      <if test="day != null">
+        day = #{day,jdbcType=DATE},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null">
+        quantity = #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="soldQuantity != null">
+        sold_quantity = #{soldQuantity,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="isNew != null">
+        is_new = #{isNew,jdbcType=CHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mediahx.model.StadiumDetail">
+    update t_stadium_detail
+    set stadium_id = #{stadiumId,jdbcType=CHAR},
+      month = #{month,jdbcType=CHAR},
+      day = #{day,jdbcType=DATE},
+      time = #{time,jdbcType=VARCHAR},
+      quantity = #{quantity,jdbcType=INTEGER},
+      sold_quantity = #{soldQuantity,jdbcType=INTEGER},
+      price = #{price,jdbcType=DOUBLE},
+      is_new = #{isNew,jdbcType=CHAR},
+      status = #{status,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  
+  <select id="findStadiumPice" parameterType="map" resultType="java.util.Map">
+    select 
+    	MIN(sd.price) minPrice ,MAX(sd.price) maxPrice
+    from t_stadium_detail sd 
+    where
+		sd.`status`= 'Y' and sd.stadium_id = #{stadiumId}
+		and sd.`day` BETWEEN #{nowTime} and #{time30}
+  </select>
+  
+  <select id="selectByIdAndDay" parameterType="map" resultType="com.mediahx.bean.stadium.StadiumDetailBean">
+    select 
+    	sd.id, sd.stadium_id stadiumId, sd.`month`, sd.`day`, sd.time, sd.quantity, sd.sold_quantity soldQuantity, sd.price, 
+    	sd.is_new isNew, sd.`status`, sd.create_time createTime, sd.update_time updateTime,
+    	(sd.quantity - sd.sold_quantity) canReserve,
+			(SELECT COUNT(1) from t_order o where sd.id = o.stadium_detail_id and 
+			(o.`status` = 'matching' or (o.`status` = 'succeed' and o.actual_size &lt; o.member_size))) canJoin
+    from t_stadium_detail sd 
+   <where>
+   sd.`status`= 'Y' and sd.stadium_id = #{stadiumId}
+   <if test="day !=null">
+   and sd.`day` = #{day}
+   </if>
+   <if test="startDay !=null and endDay !=null">
+   and sd.`day` BETWEEN #{startDay} AND #{endDay}
+   </if>
+   </where>
+	ORDER BY  sd.day ASC,sd.time ASC
+  </select>
+  
+   <select id="selectStadiumDetailOn" parameterType="map" resultMap="BaseResultMap">
+    select 
+    *
+    from t_stadium_detail
+    where status = 'Y' and id = #{stadiumDetailId}
+  </select>
+  <select id="selectInfoById" parameterType="java.lang.String" resultType="java.util.Map">
+    select 
+		o.id , o.member_size, o.prepay_amt, o.order_class, o.lock_size, o.`status`, o.actual_size, o.order_time,o.minimum_amt,
+		s.`name`, s.latitude, s.longitude, sd.`day`, sd.time, sd.price, ui.photo
+    from t_stadium_detail sd 
+			LEFT JOIN t_stadium s ON sd.stadium_id = s.id 
+			LEFT JOIN t_order o ON sd.id = o.stadium_detail_id 
+			LEFT JOIN t_user_info ui ON o.user_id = ui.id
+    where
+		s.`status` = 'Y' and sd.`status`= 'Y' 
+		and (o.`status` = 'matching' or (o.`status` = 'succeed' and o.actual_size &lt; o.member_size))
+		and sd.id = #{stadiumDelId}
+	ORDER BY sd.time
+  </select>
+  
+  <select id="getBallTeamList" parameterType="map" resultType="java.util.Map">
+	select 
+		o.id , o.member_size, o.prepay_amt, o.order_class, o.lock_size, o.`status`, o.actual_size, o.order_time,o.minimum_amt,
+		s.`name`, s.latitude, s.longitude, sd.`day`, sd.time, sd.price, ui.photo,o.free_type,
+		(CASE
+			WHEN o.order_class = 'group' THEN 0 
+			WHEN o.order_class = 'match' THEN o.minimum_amt 
+			END) pp
+    from t_order o
+			LEFT JOIN t_stadium s ON o.stadium_id = s.id 
+			LEFT JOIN t_stadium_detail sd ON o.stadium_detail_id = sd.id		
+			LEFT JOIN t_user_info ui ON o.user_id = ui.id
+    <where>
+		s.`status` = 'Y' 
+		<!--and sd.`status`= 'Y' -->
+		and ( FIND_IN_SET(o.status,'matching,succeed' )  and o.actual_size &lt; o.member_size and o.member_size-o.actual_size &gt; o.lock_size)
+		<if test="orderClass !=null ">
+			and o.order_class = #{orderClass}
+		</if>
+		<if test="day !=null ">
+			<if test="startDay !=null and endDay !=null">
+				and sd.`day` BETWEEN #{startDay} AND #{endDay}
+			</if>
+			<if test="startDay !=null and endDay ==null">
+				and sd.`day` = #{startDay}
+			</if>
+			<if test="startDay ==null and endDay !=null">
+				and sd.`day` &gt;= #{endDay}
+			</if>
+		</if>
+		<if test="startTime !=null ">
+			and sd.time REGEXP #{startTime}
+		</if>
+    </where>
+	ORDER BY sd.`day`, pp, sd.time
+	<if test="currentPageNum !=null and pageSize !=null">
+		limit ${currentPageNum} , ${pageSize}
+	</if>
+	
+  </select>
+  
+  
+</mapper>

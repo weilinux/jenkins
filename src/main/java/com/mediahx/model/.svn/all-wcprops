@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/hx_project/!svn/ver/29374/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model
+END
+OrderDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/hx_project/!svn/ver/29207/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/OrderDetail.java
+END
+Order.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/hx_project/!svn/ver/29374/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/Order.java
+END
+StadiumDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/hx_project/!svn/ver/28968/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/StadiumDetail.java
+END
+Stadium.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/hx_project/!svn/ver/28959/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/Stadium.java
+END
+BaseVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/BaseVO.java
+END
+UserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/hx_project/!svn/ver/28911/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/UserInfo.java
+END
+Cities.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/hx_project/!svn/ver/28939/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/Cities.java
+END
+Areas.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/hx_project/!svn/ver/28939/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/Areas.java
+END
+AppMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/hx_project/!svn/ver/29187/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/AppMessage.java
+END
+BaseEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/hx_project/!svn/ver/28851/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/BaseEntity.java
+END
+Advert.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/hx_project/!svn/ver/28912/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/Advert.java
+END
+Provinces.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/hx_project/!svn/ver/28939/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/model/Provinces.java
+END

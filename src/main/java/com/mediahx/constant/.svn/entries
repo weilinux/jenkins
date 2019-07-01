@@ -1,0 +1,54 @@
+8
+
+dir
+29418
+https://svn.hx.com:8443/svn/hx_project/hx_control/source/streetball/streetball_app/src/main/java/com/mediahx/constant
+https://svn.hx.com:8443/svn/hx_project
+
+
+
+2019-05-24T03:21:31.492800Z
+29322
+mo
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+30e7cd8e-d64d-cc45-81ab-772af5db07c1
+
+Constants.java
+file
+
+
+
+
+2019-05-24T03:21:56.000000Z
+f08a411d96c0de98ee21c9ddbc310355
+2019-05-24T03:21:31.492800Z
+29322
+mo
+has-props
+
+RespCode.java
+file
+
+
+
+
+2019-04-28T08:23:06.000000Z
+74c81d8f270bbe88b461678d77e62e01
+2019-04-28T03:22:15.474000Z
+28884
+pengwei
+has-props
+
